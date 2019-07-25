@@ -1,0 +1,24 @@
+{
+  "name": "postman-environment-generator",
+  "version": "0.0.0",
+  "description": "An app that creates a Postman environment for all the variable names in your Postman collection ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cazaimi/postman-environment-generator.git"
+  },
+  "keywords": [
+    "nodejs",
+    "postman-environment",
+    "postman-collection"
+  ],
+  "author": "Anmol Shukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cazaimi/postman-environment-generator/issues"
+  },
+  "homepage": "https://github.com/Cazaimi/postman-environment-generator#readme"
+}
