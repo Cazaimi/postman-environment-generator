@@ -16,9 +16,13 @@
     "postman-collection"
   ],
   "author": "Anmol Shukla",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Cazaimi/postman-environment-generator/issues"
   },
-  "homepage": "https://github.com/Cazaimi/postman-environment-generator#readme"
+  "homepage": "https://github.com/Cazaimi/postman-environment-generator#readme",
+  "dependencies": {
+    "async": "3.1.0",
+    "lodash": "4.17.15"
+  }
 }
