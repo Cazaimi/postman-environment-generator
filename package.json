@@ -1,6 +1,6 @@
 {
   "name": "postman-environment-generator",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "An app that creates a Postman environment for all the variable names in your Postman collection ",
   "main": "index.js",
   "scripts": {
