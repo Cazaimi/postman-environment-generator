@@ -24,7 +24,7 @@
   "dependencies": {
     "async": "3.1.0",
     "chalk": "2.4.2",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "request": "2.88.0"
   }
 }
