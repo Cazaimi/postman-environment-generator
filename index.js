@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const chalk = require('chalk'),
+  { program } = require('commander'),
 
   orchestrator = require('./lib/orchestrator');
 
@@ -10,12 +11,23 @@ module.exports = function (callback) {
   // 4. Send request to Postman API
   // 5. Exit, giving status to the user
 
-  let filePath = process.argv[2],
-    environmentName = process.argv[3],
-    apiKey = process.argv[4],
-    workspaceId = process.argv[5];
+  program
+    .option('--collection <filePath>')
+    .option('--environment <environmentName>')
+    .option('--apiKey <apiKey>')
+    .option('--workspaceId <workspaceId>')
+    .option('--apiKeyFile')
+    .parse(process.argv);
 
-  orchestrator(filePath, environmentName, apiKey, workspaceId, function (err, results) {
+  const {
+    collection: filePath,
+    environment: environmentName,
+    apiKey,
+    workspaceId,
+    apiKeyFile: readApiKeyFromFile
+  } = program;
+
+  orchestrator({ filePath, environmentName, apiKey, workspaceId }, { readApiKeyFromFile }, function (err, results) {
     if (err) {
       console.error('Error: ', err);
 
