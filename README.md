@@ -35,6 +35,17 @@ Say that you import a _huge_ collection in a workspace that has tonnes of [envir
 > 5. The opened browser window contains url of the form: [https://postman.co/collections/**xyz-uuid**?version=latest&workspace=uuid](https://postman.co/collections/xyz-uuid?version=latest&workspace=uuid)
 > 6. Copy the xyz-uuid before the question mark.
 
+```
+Usage: index [options]
+
+Options:
+  --collection <filePath>          File path to the collection out of which environment variables should be picked up.
+  --environment <environmentName>  The name that the environment should get
+  --apiKey <apiKey>                Postman API key/Or if you're concerned about security, then the path to the api key file
+  --workspaceId <workspaceId>      The workspace into which this environment should be loaded
+  --apiKeyFile                     Whether to use a file of STDIN for the api key
+  -h, --help                       display help for command
+```
 
 > The `workspace-id` is an optional parameter. Not giving the workspace Id will add the environment to your default workspace. To get the workspace-id, follow these steps:
 > 1. Log into the postman app
@@ -48,7 +59,7 @@ Say that you import a _huge_ collection in a workspace that has tonnes of [envir
 
 Running:
 ```
-node index.js ~/Downloads/collections/my-collection.json ImportedCollection 74a2bdd31eeb457a88c9a3342c7c8f81 404891cb-a247-4508-81dc-38f745118221
+node index.js --collection ~/Downloads/collections/my-collection.json --environment ImportedCollection --apiKey 74a2bdd31eeb457a88c9a3342c7c8f81  --workspaceId 404891cb-a247-4508-81dc-38f745118221
 ```
 
 Will create an environment called 'ImportedCollection' with all environment variables present in the collection file located at `~/Downloads/collections/my-collection.json`, in the workspace with the id `404891cb-a247-4508-81dc-38f745118221`.
