@@ -12,11 +12,11 @@ module.exports = function (callback) {
   // 5. Exit, giving status to the user
 
   program
-    .option('--collection <filePath>')
-    .option('--environment <environmentName>')
-    .option('--apiKey <apiKey>')
-    .option('--workspaceId <workspaceId>')
-    .option('--apiKeyFile')
+    .option('--collection <filePath>', 'File path to the collection out of which environment variables should be picked up.')
+    .option('--environment <environmentName>', 'The name that the environment should get')
+    .option('--apiKey <apiKey>', 'Postman API key/Or if you\'re concerned about security, then the path to the api key file')
+    .option('--workspaceId <workspaceId>', 'The workspace into which this environment should be loaded')
+    .option('--apiKeyFile', 'Whether to use a file of STDIN for the api key')
     .parse(process.argv);
 
   const {
