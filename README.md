@@ -21,8 +21,19 @@ Say that you import a _huge_ collection in a workspace that has tonnes of [envir
 
 1. Clone this into your local folder and navigate to it.
 2. Run `npm install`
-2. Export the collection JSON from the Postman app (Steps to do that are [here](https://learning.getpostman.com/docs/postman/collections/data_formats/#exporting-postman-data)). The file encoding must be `utf-8`. 
-3. Run `node index.js --collection <absolute-path-to-collection-file> --environment <name-that-environment-should-get> --apiKey <postman-api-key/path-to-key> --workspaceId <workspace-id> --apiKeyFile`
+### Using exported collection's file
+1. Export the collection JSON from the Postman app (Steps to do that are [here](https://learning.getpostman.com/docs/postman/collections/data_formats/#exporting-postman-data)). The file encoding must be `utf-8`. 
+2. Run `node index.js <absolute-path-to-collection-file> <name-that-environment-should-get> <postman-api-key> <workspace-id>`
+### Using uuid
+2. Run `node index.js <collection-id> <name-that-environment-should-get> <postman-api-key> <workspace-id>`
+
+> The `collection-id` is a parameter to get collection using the API. To get the collection-id, follow these steps:
+> 1. Log into the postman app
+> 2. Select any collection
+> 3. Click on the right arrow beside the collection name
+> 4. Click on 'View in Web'
+> 5. The opened browser window contains url of the form: [https://postman.co/collections/**xyz-uuid**?version=latest&workspace=uuid](https://postman.co/collections/xyz-uuid?version=latest&workspace=uuid)
+> 6. Copy the xyz-uuid before the question mark.
 
 ```
 Usage: index [options]
@@ -41,7 +52,7 @@ Options:
 > 2. Select any collection
 > 3. Click on the right arrow beside the collection name
 > 4. Click on 'View in Web'
-> 5. The opened browser window contains url of the form: `https://postman.co/collections/xyz-uuid?version=latest&workspace=uuid`
+> 5. The opened browser window contains url of the form: [https://postman.co/collections/xyz-uuid?version=latest&workspace=**uuid**](https://postman.co/collections/xyz-uuid?version=latest&workspace=uuid)
 > 6. Copy the workspace Id.
 
 ### Example
